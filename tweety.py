@@ -52,7 +52,7 @@ class TwitterListener(StreamListener):
         try:
             pandata = pd.read_json(data)
             # didn't work until I used the pandas dataframe
-            if pandata.user.followers_count > 100:  # filters by number of followers the tweeter has
+            if pandata.user.followers_count > 10000:  # filters by number of followers the tweeter has
                 print(data)
                 with open(self.fetched_tweets_output, 'a') as tf:
                     tf.write(data + ",")  # writes the returned JSON into the file you assigned to fetched_tweets_output
@@ -68,7 +68,7 @@ class TwitterListener(StreamListener):
 
 
 if __name__ == '__main__':
-    search_terms = ["Kanye"]  # Enter whatever search term you want to keep track of
+    search_terms = ["Kashmir"]  # Enter whatever search term you want to keep track of
     fetched_tweets_output = "tweets.csv"  # make the file in the same directory as the program
 
     twitter_client = TwitterClient('pycon')
