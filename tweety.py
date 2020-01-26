@@ -5,7 +5,7 @@ from tweepy import OAuthHandler
 from tweepy import Stream
 from tweepy.streaming import StreamListener
 
-import twitter_credentials
+import twitter_credentials  # this is a .py file where you should store your consumer key, consumer secret, access token, and access token secret
 
 
 class TwitterClient():
